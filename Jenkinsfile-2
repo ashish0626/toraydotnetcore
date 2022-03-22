@@ -66,22 +66,6 @@ spec:
 }
    }
   stages {
-    stage('Restore packages') {
-    steps {
-        bat "dotnet restore ${workspace}/toraydotnetcore/EmployeeRegistrationService.sln"
-        }
-      }
-    stage('Build') {
-      steps {
-        container('maven') {
-          echo sh(script: 'env|sort', returnStdout: true)
-          sh """
-            mvn -B -ntp -T 2 package -DskipTests -DAPP_VERSION=${APP_VER}
-            """
-        }
-      }
-    }
-    
     stage('Containerize') {
       steps {
         container('kaniko') {
