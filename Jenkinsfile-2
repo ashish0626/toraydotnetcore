@@ -11,7 +11,7 @@ pipeline {
     DEPLOY_GITREPO_USER = "ashish0626"    
     DEPLOY_GITREPO_URL = "github.com/${DEPLOY_GITREPO_USER}/dotnet-core-helmchart.git"
     DEPLOY_GITREPO_BRANCH = "main"
-    DEPLOY_GITREPO_TOKEN = credentials('ashish_git_hub')
+    DEPLOY_GITREPO_TOKEN = credentials('ashish_github')
   }    
   agent {
     kubernetes {
