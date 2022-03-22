@@ -68,7 +68,7 @@ spec:
   stages {
     
     
-    stage('Build Docker Containerize') {
+    stage('Build Docker Containerize and push to harbor') {
       steps {
         container('kaniko') {
           sh "sed -i 's,harbor.example.com,${env.HARBOR_URL},g' Dockerfile"
