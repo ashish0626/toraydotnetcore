@@ -15,7 +15,7 @@ pipeline {
   }    
   agent {
     kubernetes {
-      label "spring-petclinic-${myid}"
+      label "dot-net-core-${myid}"
       instanceCap 1
       defaultContainer 'jnlp'
       yaml """
@@ -68,7 +68,7 @@ spec:
   stages {
     stage('Restore packages') {
     steps {
-        sh "dotnet restore ${workspace}/toraydotnetcore/EmployeeRegistrationService.sln"
+        bat "dotnet restore ${workspace}/toraydotnetcore/EmployeeRegistrationService.sln"
         }
       }
     stage('Build') {
