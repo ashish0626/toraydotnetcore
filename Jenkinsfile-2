@@ -68,7 +68,7 @@ spec:
   stages {
     stage('Restore packages') {
     steps {
-        sh "dotnet restore ${workspace}\\toraydotnetcore\\EmployeeRegistrationService.sln"
+        sh "dotnet restore ${workspace}/toraydotnetcore/EmployeeRegistrationService.sln"
         }
       }
     stage('Build') {
